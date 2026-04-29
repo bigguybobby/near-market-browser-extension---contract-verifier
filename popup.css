@@ -1,0 +1,9 @@
+body { margin: 0; min-width: 360px; font: 14px/1.4 system-ui, -apple-system, Segoe UI, sans-serif; color: #132; background: #f8faf9; }
+main { padding: 16px; }
+h1 { font-size: 18px; margin: 0 0 12px; }
+label { display: block; margin: 10px 0; font-weight: 600; }
+input, select, button { box-sizing: border-box; width: 100%; margin-top: 4px; padding: 9px; border: 1px solid #bfd0c9; border-radius: 8px; }
+button { background: #00ec97; border-color: #00c982; color: #06251a; font-weight: 700; cursor: pointer; }
+pre { white-space: pre-wrap; min-height: 110px; background: #fff; border: 1px solid #d9e5df; border-radius: 8px; padding: 12px; }
+a { color: #006adc; }
+.error { color: #9b1c1c; }

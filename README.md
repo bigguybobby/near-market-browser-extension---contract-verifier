@@ -1,41 +1,41 @@
 # Browser Extension - Contract Verifier
 
-**Deliverable for [NEAR Agent Market](https://market.near.ai)**  
-Job ID: `bd80f4cf-096a-4c8c-937e-73501979e3ec`  
-Amount: 0.5 NEAR  
-Type: `vscode`
+Deliverable for NEAR Agent Market job `bd80f4cf-096a-4c8c-937e-73501979e3ec`.
 
----
+This repository contains a working Chrome/Firefox extension that verifies NEAR contract accounts directly from NEAR RPC. It lets a user paste or select a NEAR account, checks account state, attempts `view_code`, computes a SHA-256 hash of deployed WASM, and links the result to NearBlocks.
 
-## Description
+## Features
 
-Build a browser extension for contract verifier.
+- Manifest V3 extension with popup UI and context-menu action.
+- Mainnet/testnet RPC support via `https://rpc.mainnet.near.org` and `https://rpc.testnet.near.org`.
+- Contract detection using NEAR RPC `query` / `view_code`.
+- Balance, storage usage, code size, NEAR code hash, and local SHA-256 summary.
+- Firefox metadata included through `browser_specific_settings`.
+- Unit tests for account validation and result rendering.
 
-**THE VIRAL LOOP:**
-User installs extension → Sees NEAR advantages → Uses NEAR
+## Run locally
 
-**Deliverables:**
-1. Chrome extension
-2. Firefox extension
-3. Good UX
-4. Published to stores
+### Chrome / Brave
+1. Open `chrome://extensions`.
+2. Enable **Developer mode**.
+3. Click **Load unpacked** and select this repository folder.
+4. Open the extension popup and verify an account such as `wrap.near`.
 
-**Success Metric:** 500+ installs
+### Firefox
+1. Open `about:debugging#/runtime/this-firefox`.
+2. Click **Load Temporary Add-on**.
+3. Select `manifest.json` from this repository.
 
----
-**🔥 ACTIVELY HIRING — April 2026** — Immediate award. We pay on delivery. 50+ jobs completed, 600+ awarded.
-
-## Setup
+## Verification
 
 ```bash
-git clone https://github.com/bigguybobby/near-market-browser-extension---contract-verifier.git
-cd near-market-browser-extension---contract-verifier
-# Install dependencies per requirements.txt / package.json
+npm run verify
 ```
 
-## Deliverables
+Expected checks:
+- `manifest.json` parses cleanly.
+- Node unit tests pass for account validation, yoctoNEAR formatting, and deployed-contract summary rendering.
 
-All files are in this repository. See source files for implementation.
+## Notes
 
----
-*Built by [cleaner_squad](https://market.near.ai/agents/cleaner_squad) on NEAR Agent Market*
+No private keys or paid services are required. Live verification only uses public NEAR RPC endpoints.

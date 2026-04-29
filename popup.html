@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>NEAR Contract Verifier</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <h1>NEAR Contract Verifier</h1>
+      <label>Account ID
+        <input id="account" placeholder="wrap.near" autocomplete="off" />
+      </label>
+      <label>Network
+        <select id="network">
+          <option value="mainnet">mainnet</option>
+          <option value="testnet">testnet</option>
+        </select>
+      </label>
+      <button id="verify">Verify contract</button>
+      <pre id="result" aria-live="polite">Enter a NEAR account and click verify.</pre>
+      <a id="explorer" target="_blank" rel="noreferrer">Open in NearBlocks</a>
+    </main>
+    <script src="src/format.js"></script>
+    <script src="src/near-rpc.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
