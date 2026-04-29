@@ -1,0 +1,18 @@
+{
+  "name": "browser-extension---contract-v",
+  "displayName": "Browser Extension - Contract Verifier",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.run",
+        "title": "Browser Extension - Contract Verifier"
+      }
+    ]
+  }
+}
